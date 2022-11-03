@@ -1,0 +1,27 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      .row
+        = render "layouts/panel"
+        .col-lg-9
+          .row.products
+            - @books.each do | book |
+              .col-lg-4.col-md-6
+                .product
+                  .card
+                    = link_to image_tag(book.image, class: "card-img-top"), book_path(book.id) if book.image.attached?
+                    .card-body
+                      %h5.card-title{:title => book.title}= book.title.truncate(20)
+                      %p.card-text.author-name
+                        = t '.by'
+                        - book.authors.each do | author |
+                          = author.name
+                      %p.card-text.price
+                        ₹#{book.price}
+                      .pb-2
+                        = link_to (t '.view'), book_path(book.id), class: "btn btn1"
+            = render "layouts/pagy"
+    / *** id="content" end ***

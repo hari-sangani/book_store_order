@@ -1,0 +1,17 @@
+= form_with(model: wishlist) do |form|
+  - if wishlist.errors.any?
+    %div{:style => "color: red"}
+      %h2
+        = pluralize(wishlist.errors.count, "error")
+        prohibited this wishlist from being saved:
+      %ul
+        - wishlist.errors.each do |error|
+          %li= error.full_message
+  %div
+    = form.label :user_id, style: "display: block"
+    = form.text_field :user_id
+  %div
+    = form.label :book_id, style: "display: block"
+    = form.text_field :book_id
+  %div
+    = form.submit

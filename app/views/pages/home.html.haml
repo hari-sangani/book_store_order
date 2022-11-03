@@ -1,0 +1,88 @@
+/
+  *** MAIN SECTION ***
+  ___________________________________________
+#all
+  #content
+    .container
+      / *** Slide ***
+      #carouselIndicators.carousel.slide{"data-bs-ride" => "true"}
+        .carousel-indicators
+          %button.active{"data-bs-slide-to" => "0", "data-bs-target" => "#carouselIndicators", :type => "button"}
+          %button{"data-bs-slide-to" => "1", "data-bs-target" => "#carouselIndicators", :type => "button"}
+          %button{"data-bs-slide-to" => "2", "data-bs-target" => "#carouselIndicators", :type => "button"}
+        .carousel-inner
+          .carousel-item.active{"data-bs-interval" => "2000"}
+            = image_tag "main-slider1", class: "d-block w-100"
+          .carousel-item{"data-bs-interval" => "2000"}
+            = image_tag "main-slider2", class: "d-block w-100"
+          .carousel-item{"data-bs-interval" => "2000"}
+            = image_tag "main-slider3", class: "d-block w-100"
+      /
+        *** ADVANTAGES HOMEPAGE ***
+        _________________________________________________________
+      #advantages
+        .container
+          .row.mb-4
+            .col-md-4
+              .box.d-flex.flex-column.justify-content-center.mb-0.h-100
+                .icon
+                  %i.fa.fa-heart
+                %h3 We love our customers
+                %p.mb-0
+                  We are known to provide best possible service ever
+            .col-md-4
+              .box.d-flex.flex-column.justify-content-center.mb-0.h-100
+                .icon
+                  %i.fa.fa-tags
+                %h3 Best prices
+                %p.mb-0
+                  You can check that the height of the boxes adjust when
+                  longer text like this one is used in one of them.
+            .col-md-4
+              .box.d-flex.flex-column.justify-content-center.mb-0.h-100
+                .icon
+                  %i.fa.fa-thumbs-up
+                %h3 100% satisfaction
+                %p.mb-0 Free returns on everything for 20 days.
+          / /.row
+        / /.container
+      / /#advantages
+      / *** ADVANTAGES END ***
+      /
+        *** POPULAR PRODUCT SLIDESHOW ***
+        _________________________________________________________
+      #popular
+        .box.py-4
+          .container
+            .row
+              .col-md-12
+                %h2.mb-0.text-center Popular this week
+      .item
+        .row.text-center
+          - @random_books.each do | book |
+            .col-lg-3.col-md-6
+              .product
+                .card
+                  = link_to image_tag(book.image, class: "card-img-top"), book_path(book.id) if book.image.attached?
+                  .card-body
+                    %h5.card-title{:title => book.title}= book.title.truncate(22)
+                    %p.card-text.author-name
+                      by
+                      - book.authors.each do | author |
+                        = author.name
+                    %p.card-text.price
+                      ₹#{book.price}
+                    .pb-2
+                      = link_to (t ".view"), book_path(book.id), class: "btn btn1"
+                    - if user_signed_in?
+                      = link_to carts_path(cart: {user_id: current_user.id, book_id: book.id}), |
+                        method: :post,                                                          |
+                        class: "btn btn-primary navbar-btn" do                                  |
+                        %i.fa.fa-shopping-cart
+                        = t ".cart"
+                    - else
+                      = link_to user_session_path, class: "btn btn-primary navbar-btn" do
+                        %i.fa.fa-shopping-cart
+                        = t ".cart"
+          / HOT PRODUCT SHLDESHOW END
+      / *** id="content" end ***

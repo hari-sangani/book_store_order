@@ -1,0 +1,570 @@
+/* Body */
+body {
+  overflow-x: hidden;
+  background-color: #f0f0f0;
+}
+
+h2,
+h3 {
+  color: #4fbfa8;
+}
+
+a,
+button {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  outline: none;
+}
+
+a i.fa,
+button i.fa {
+  margin: 0 5px;
+}
+
+.navbar .navbar-btn,
+#content .btn {
+  background-color: #4fbfa8;
+  border-color: #4fbfa8;
+}
+
+#content .del-btn {
+  background-color: #f44336;
+  border-color: #f44336;
+  color: #fff;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 400px;
+}
+
+.review_img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#search form {
+  margin-block-end: 0em !important;
+}
+
+/*
+*
+* ======================================================================
+* TOP BAR
+* ======================================================================
+*
+*/
+#top {
+  background: #555;
+  padding: 10px 0;
+}
+
+#top .offer .btn {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#top .offer,
+#top a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#top ul.menu {
+  padding-top: 5px;
+  margin: 0;
+  font-size: 0.738rem;
+}
+
+#top ul.menu > li {
+  margin-right: 0;
+}
+
+#top ul.menu > li {
+  color: #eee;
+}
+
+#top ul.menu > li + li:before {
+  content: "|\00a0";
+  padding: 0 5px;
+  color: #f8f9fa;
+}
+
+/*
+*
+* ======================================================================
+* NAVIGATION BAR
+* ======================================================================
+*
+*/
+
+.navbar {
+  border-bottom: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+
+.navbar-brand {
+  color: #333
+}
+
+.navbar-brand:hover {
+  font-size: 25px;
+  color: #333
+}
+
+.navbar .navbar-nav > .nav-item > .nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 25px 15px !important;
+  color: #555;
+}
+
+.navbar .navbar-nav > .nav-item > .nav-link.active,
+.navbar .navbar-nav > .nav-item > .nav-link:hover,
+.navbar .navbar-nav > .nav-item > .nav-link:focus {
+  background: #4fbfa8;
+}
+
+/*
+*
+* ======================================================================
+* Main
+* ======================================================================
+*
+*/
+
+#content {
+  background-color: rgb(236, 232, 232);
+  margin-bottom: 0;
+  padding: 80px 0;
+}
+
+/*
+*
+* ======================================================================
+* ADVANTAGES
+* ======================================================================
+*
+*/
+#advantages {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#advantages .box {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+#advantages .box .icon {
+  font-size: 30px;
+  color: rgb(212, 152, 152);
+}
+
+#advantages .box h3 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#advantages .box p {
+  color: #555;
+}
+
+/*
+*
+* ======================================================================
+* POPULAR PRODUCT
+* ======================================================================
+*
+*/
+
+.item {
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card p {
+  margin-bottom: 2px;
+}
+
+/* Detail Page Card */
+
+.product .btn1 {
+  background-color: #fff !important;
+  color: #666;
+}
+
+.product .btn1:hover {
+  color: #111 !important;
+}
+
+/*
+*
+* ======================================================================
+* FOOTER
+* ======================================================================
+*
+*/
+
+#footer {
+  background: #e0e0e0;
+  padding: 100px 0;
+}
+
+#footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+#footer ul a {
+  color: #999;
+  text-decoration: none;
+}
+
+#footer .social {
+  text-align: left;
+}
+
+#footer .social a {
+  margin: 0 10px 0 0;
+  color: #fff;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  line-height: 26px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  vertical-align: bottom;
+  background-color: #555;
+}
+
+#footer .social a i {
+  vertical-align: bottom;
+  line-height: 30px;
+}
+
+#footer .social a.facebook:hover {
+  background-color: #4460ae;
+}
+
+#footer .social a.gplus:hover {
+  background-color: #c21f25;
+}
+
+#footer .social a.twitter:hover {
+  background-color: #3cf;
+}
+
+#footer .social a.instagram:hover {
+  background-color: #cd4378;
+}
+
+#footer .social a.email:hover {
+  background-color: #4a7f45;
+}
+
+/*
+*
+* ======================================================================
+* COPYRIGHTS
+* ======================================================================
+*
+*/
+#copyright {
+  background: #333;
+  color: #ccc;
+  padding: 20px 0;
+  font-size: 0.738rem;
+}
+
+#copyright p {
+  margin: 0;
+}
+
+/*
+*
+* ======================================================================
+* BOX
+* ======================================================================
+*
+*/
+
+.box {
+  background: #fff;
+  margin: 0 0 30px;
+  border: solid 1px #e6e6e6;
+  padding: 30px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*
+*
+* ======================================================================
+* LOGIN PAGE
+* ======================================================================
+*
+*/
+
+#login,
+#sign_up {
+  width: 450px;
+  margin: 0 auto;
+}
+
+#login .forget-password a {
+  font-size: 14px;
+  color: rgb(145, 141, 141);
+  text-decoration: none;
+}
+
+/*`
+*
+* ======================================================================
+* LIST PAGE
+* ======================================================================
+*
+*/
+
+#content .card.sidebar-menu {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#content .card.sidebar-menu .card {
+  padding: 15px;
+  background: #fff;
+}
+
+#content .card.sidebar-menu h3 {
+  padding: 5px 0;
+  margin: 0;
+  color: #333;
+}
+
+#content .card.sidebar-menu ul.nav.category-menu {
+  margin-bottom: 20px;
+}
+
+#content .card.sidebar-menu ul.nav.category-menu li a {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 0;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  /* justify-content: space-between; */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #4fbfa8;
+}
+
+#content .card.sidebar-menu ul.nav.category-menu li a:hover {
+  background-color: #4fbfa8 !important;
+  color: #fff;
+}
+
+#content .card.sidebar-menu ul.nav.category-menu li a.active {
+  background-color: #4fbfa8 !important;
+  color: #fff;
+}
+
+#content .card.sidebar-menu ul.nav h3 {
+  background-color: #4fbfa8;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+#content .card.sidebar-menu ul.nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#content .card.sidebar-menu ul.nav ul li {
+  display: block;
+}
+
+#content .card.sidebar-menu ul.nav ul li a {
+  position: relative;
+  font-weight: normal;
+  text-transform: none !important;
+  display: block;
+  padding: 10px 15px;
+  padding-left: 30px;
+  font-size: 0.738rem;
+  color: #555 !important;
+}
+
+#content .card.sidebar-menu ul.nav ul li a:hover,
+#content .card.sidebar-menu ul.nav ul li a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+.products .col-lg-4 {
+  margin-bottom: 3rem;
+}
+
+#content #checkout .nav a {
+  display: block;
+  height: 100%;
+}
+
+#content #checkout .nav a i {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#content #order-summary table {
+  margin-top: 20px;
+}
+
+#content #order-summary table td {
+  color: #999;
+}
+
+#content #order-summary table tr.total td,
+#content #order-summary table tr.total th {
+  font-size: 1.125rem;
+  color: #555;
+  font-weight: 700;
+}
+
+#content #checkout .table tbody tr td,
+#content #table tbody tr td,
+#content #customer-order .table tbody tr td {
+  vertical-align: middle;
+}
+
+#content #checkout .table tbody tr td input,
+#content #basket .table tbody tr td input,
+#content #customer-order .table tbody tr td input {
+  width: 50px;
+  text-align: right;
+}
+
+#content #checkout .table tbody tr td img,
+#content #basket .table tbody tr td img,
+#content #customer-order .table tbody tr td img {
+  width: 50px;
+}
+
+#content #checkout .table tfoot,
+#content #basket .table tfoot,
+#content #customer-order .table tfoot {
+  font-size: 1.125rem;
+}
+
+/*
+*
+* ======================================================================
+* DETAIL PAGE
+* ======================================================================
+*
+*/
+
+.product_img {
+  width: 300px;
+  height: 500px;
+}
+
+#product_main h1.book_title {
+  font-size: 30px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+#product_main h1.author_name {
+  font-size: 12px;
+}
+
+#product_main p a {
+  color: #fff;
+}
+
+#product_main p.price {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+#product_main {
+  margin-bottom: 30px;
+}
+
+#product_main .buttons .btn-outline-primary {
+  background-color: #fff;
+  color: #555;
+}
+
+#details h4 p,
+#details ul {
+  padding-left: 15px;
+  list-style: none;
+}
+
+/*
+*
+* ======================================================================
+* BASKET PAGE
+* ======================================================================
+*
+*/
+
+#basket .box-footer a.btn-outline-secondary {
+  background-color: #fff;
+  color: #333;
+}
+
+#basket .table a {
+  text-decoration: none;
+  color: #333;
+}
+
+/*
+*
+* ======================================================================
+* CONTACT PAGE
+* ======================================================================
+*
+*/
+
+#contact,
+#about_us {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#contact h3 {
+  font-size: 23px;
+}
+
+#contact form label,
+#account form label {
+  margin: 10px 5px 0;
+}

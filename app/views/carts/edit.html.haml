@@ -1,0 +1,7 @@
+%h1 Editing cart
+= render "form", cart: @cart
+%br/
+%div
+  = link_to "Show this cart", @cart
+  |
+  \#{link_to "Back to carts", carts_path}

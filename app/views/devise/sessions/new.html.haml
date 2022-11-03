@@ -1,0 +1,30 @@
+/
+  *** LOGIN SECTION ***
+  _________________________________________________________
+#all
+  #content
+    #login.box.mx-auto
+      %h1 Login
+      %p.lead Already our customer?
+      %p.text-muted
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper.
+      %hr/
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field.form-group.pb-3
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+        .field.form-group.pb-3
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class: "form-control"
+        - if devise_mapping.rememberable?
+          .field.form-group.pb-3
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions.text-center
+          = f.submit "Log in", data: { turbo: false }, class: "btn btn-primary"
+      = render "devise/shared/links"

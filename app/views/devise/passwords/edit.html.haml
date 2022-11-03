@@ -1,0 +1,50 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      .row
+        \%&gt;
+        .col-lg-9
+          #account.box
+            %h1 My account
+            %p.lead
+              Change your personal details or your password here.
+            %p.text-muted
+              Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas.
+            %h3 Change password
+            = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+              = render "devise/shared/error_messages", resource: resource
+              = f.hidden_field :reset_password_token
+              .field.form-group
+                = f.label :password, "New password"
+                %br/
+                - if @minimum_password_length
+                  %em
+                    (#{@minimum_password_length} characters minimum)
+                  %br/
+                = f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control"
+              .field.form-group
+                = f.label :password_confirmation, "Confirm new password"
+                %br/
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+              .actions
+                = f.submit "Change my password"
+            = render "devise/shared/links"
+            %h3.mt-5 Personal details
+            %ul.list-group.list-group-flush
+              %li.list-group-item
+                %strong Name :
+                Lorem Sento
+              %li.list-group-item
+                %strong Email :
+                abc@xyz.com
+              %li.list-group-item
+                %strong Contact No. :
+                64894 34324
+              %li.list-group-item
+                %strong Address :
+                123, Dolor Road, Stanto
+    / *** id="content" end ***

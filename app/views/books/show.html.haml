@@ -1,0 +1,89 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      .row
+        = render "layouts/panel"
+        .col-lg-9
+          #product_main.row
+            .col-lg-6.product_img
+              = image_tag (@book.image), class: "rounded-3 product_img" if @book.image.attached?
+            .col-lg-6
+              .box.text-center
+                %h1.book_title= @book.title
+                %p.author_name.fs-6
+                  = t '.by'
+                  - @book.authors.each do | author |
+                    = author.name
+                %p.price
+                  ₹#{@book.price}
+                %p.buttons
+                  - if user_signed_in?
+                    = link_to wishlists_path(wishlist: {user_id: current_user.id, book_id: @book.id}), |
+                      method: :post,                                                                   |
+                      class: "btn btn-outline-primary me-2" do                                              |
+                      %i.fa.fa-heart
+                      = t '.wishlist'
+                    = link_to carts_path(cart: {user_id: current_user.id, book_id: @book.id}), |
+                      method: :post,                                                           |
+                      class: "btn btn-primary navbar-btn" do                                   |
+                      %i.fa.fa-shopping-cart
+                      = t '.cart'
+                  - else
+                    = link_to user_session_path, class: "btn btn-outline-primary me-2" do
+                      %i.fa.fa-heart
+                      = t '.wishlist'
+                    = link_to user_session_path, class: "btn btn-primary" do
+                      %i.fa.fa-shopping-cart
+                      = t '.cart'
+          #details.box
+            %h4= t '.about_author'
+            %p
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Eveniet ab, non autem sit nostrum quibusdam. Quo, sit ex ea
+              aspernatur necessitatibus, quia accusamus perferendis nam
+              ducimus. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Sit quisquam quidem odit unde! Eveniet nihil nobis unde
+              nulla expedita et blanditiis, nisi enim minima, mollitia, quam
+              at perferendis veniam quasi.
+            %hr/
+            %h4= t '.product_details'
+            %ul
+              %li
+                %strong
+                  = t '.publisher'
+                  \:
+                = @book.publisher.name
+              %li
+                %strong
+                  = t '.published_date'
+                  \:
+                = @book.publish_date
+              %li
+                %strong
+                  = t '.language'
+                  \:
+                = @book.language
+              %li
+                %strong
+                  = t '.paperback'
+                  \:
+                = @book.paperback
+              %li
+                %strong ISBN No. :
+                = @book.isbndb
+          #review.box
+            %h4= t '.product_review'
+            %hr/
+            .review_container
+              .d-flex.flex-row.mb-1
+                = image_tag "avatar1.png", :class => "review_img"
+                %h5.py-2.ms-2 Lorem Droy
+              %p Awesome book!
+            .review_container
+              .d-flex.flex-row.mb-1
+                = image_tag "avatar2.png", :class => "review_img"
+                %h5.py-2.ms-2 Ipsum Romm
+              %p It's awesome, and I'm happy that I read it.

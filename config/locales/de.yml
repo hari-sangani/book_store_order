@@ -1,0 +1,46 @@
+de:
+  books:
+    show:
+      view: "Einzelheiten anzeigen"
+      cart: "In den Warenkorb"
+      wishlist: ""
+      by: "durch"
+      about_author: "Über den Autor"
+      product_details: "Produktdetails"
+      product_review: "Produktbewertung"
+      publisher: "Verleger"
+      published_date: "Veröffentlichungsdatum"
+      language: "Sprache"
+      paperback: "Taschenbuch"
+    index:
+      view: "Einzelheiten anzeigen"
+      cart: "In den Warenkorb"
+      wishlist: "Wunschliste hinzufügen"
+      by: "durch"
+  layouts:
+    show_book:
+      view: "Einzelheiten anzeigen"
+      by: "durch"
+    panel:
+      genre: "Genre"
+      author: "Autor"
+      publisher: "Verleger"
+      language: "Sprache"
+      price: "Preis"
+    header:
+      search: "Suche"
+      home: "Startseite"
+      books: "Bücher"
+      about: "Um"
+      welcome: "Willkommen,"
+      logout: "Ausloggen"
+      sign_up: "Anmelden"
+      login: "Anmeldung"
+      contact: "Kontakt"
+      account: "Konto"
+      offer: "Angebot des Tages"
+      offer_msg: "Erhalten Sie pauschal 30% Rabatt"
+  pages:
+    home:
+      view: "Einzelheiten anzeigen"
+      cart: "In den Warenkorb"

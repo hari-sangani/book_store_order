@@ -1,0 +1,9 @@
+$(document).ready(() => {
+  $("#<%= @user_cart_id %>").change(() => {
+    console.log("Workinggg");
+    let price = $("#<%= @user_cart_id %>.price").html();
+    let quantity = $("#<%= @user_cart_id %>.quantity").val();
+    let total_price = price * quantity;
+    $("#<%= @user_cart_id %>.total").html(total_price);
+  });
+});

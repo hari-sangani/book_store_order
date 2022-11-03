@@ -1,0 +1,85 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      #contact.box
+        %h1 Contact
+        %p.lead
+          Are you curious about something? Do you have some kind of problem
+          with our products?
+        %p
+          Please feel free to contact us, our customer service center is
+          working for you 24/7.
+        %hr/
+        .row
+          .col-md-4
+            %h3
+              %i.fa.fa-map-marker>
+              Address
+            %p
+              13/25 New Avenue
+              %br/
+              New Heaven
+              %br/
+              45Y 73J
+              %br/
+              England
+              %br/
+              %strong Great Britain
+          / /.col-sm-4
+          .col-md-4
+            %h3
+              %i.fa.fa-phone
+              Call center
+            %p.text-muted
+              This number is toll free if calling from Great Britain
+              otherwise we advise you to use the electronic form of
+              communication.
+            %p
+              %strong +33 555 444 333
+          / /.col-sm-4
+          .col-md-4
+            %h3
+              %i.fa.fa-envelope
+              Electronic support
+            %p.text-muted
+              Please feel free to write an email to us or to use our
+              electronic ticketing system.
+            %ul.list-group
+              %li.list-group
+                %strong
+                  %a{:href => "mailto:"} info@fakeemail.com
+          / /.col-sm-4
+        / /.row
+        %hr/
+        %h3 Contact form
+        %form
+          .row
+            .col-md-6
+              .form-group
+                %label{:for => "firstname"} Firstname
+                %input#firstname.form-control{:type => "text"}/
+            .col-md-6
+              .form-group
+                %label{:for => "lastname"} Lastname
+                %input#lastname.form-control{:type => "text"}/
+            .col-md-6
+              .form-group
+                %label{:for => "email"} Email
+                %input#email.form-control{:type => "text"}/
+            .col-md-6
+              .form-group
+                %label{:for => "subject"} Subject
+                %input#subject.form-control{:type => "text"}/
+            .col-md-12
+              .form-group
+                %label{:for => "message"} Message
+                %textarea#message.form-control
+            .col-md-12.text-center.mt-3
+              %button.btn.btn-primary{:type => "submit"}
+                %i.fa.fa-envelope-o
+                Send message
+          / /.row
+    / *** id="content" end ***

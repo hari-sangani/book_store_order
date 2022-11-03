@@ -1,0 +1,57 @@
+%body
+  %header.header
+    #top
+      .container
+        .row
+          .col-lg-6.offer.mb-3.mb-lg-0
+            %a.btn.btn-success.btn-sm{:href => "#"}= t '.offer'
+            %a.ml-1{:href => "#"}= t '.offer_msg'
+          .col-lg-6.text-end.text-lg-right
+            %ul.menu.list-inline.mb-0
+              - if user_signed_in?
+                %li.list-inline-item
+                  = t '.welcome'
+                  #{current_user.name}
+                %li.list-inline-item= link_to (t '.logout'), destroy_user_session_path, method: :delete
+              - else
+                %li.list-inline-item= link_to (t '.sign_up'), new_user_registration_path
+                %li.list-inline-item= link_to (t '.login'), new_user_session_path
+              %li.list-inline-item= link_to (t '.contact'), pages_contact_path
+              %li.list-inline-item= link_to (t '.account'), edit_user_registration_path
+      / *** Top Bar End ***
+    / *** Navigavtion Bar ***
+    %nav.navbar.navbar-expand-lg
+      .container
+        = link_to "BoOkStoRE", root_path, class: "navbar-brand"
+        %button.navbar-toggler{"data-bs-target" => "#navbarContent", "data-bs-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        %a.btn.btn-outline-secondary.navbar-toggler{:href => "#"}
+          %i.fa.fa-shopping-cart
+        .collapse.navbar-collapse#navbarContent
+          %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            %li.nav-item
+              = link_to (t '.home'), root_path, class: "nav-link"
+            %li.nav-item
+              = link_to (t '.books'), books_path, class: "nav-link"
+            %li.nav-item
+              = link_to (t '.about'), pages_about_path, class: "nav-link"
+        .navbar-buttons.d-flex.justify-content-end
+          #search
+            = form_with url: books_path, method: :get, class: "me-3" do |form|
+              .input-group
+                = form.text_field :query, placeholder: (t '.search'), class: "form-control"
+                = form.submit "Search", class: "btn btn-primary"
+          #wishlist-overview.me-3
+            - if user_signed_in?
+              = link_to wishlists_path, class: "btn btn-primary navbar-btn" do
+                %i.fa.fa-heart
+            - else
+              = link_to user_session_path, class: "btn btn-primary navbar-btn" do
+                %i.fa.fa-heart
+          #basket-overview
+            - if user_signed_in?
+              = link_to carts_path, class: "btn btn-primary navbar-btn" do
+                %i.fa.fa-shopping-cart
+            - else
+              = link_to user_session_path, class: "btn btn-primary navbar-btn" do
+                %i.fa.fa-shopping-cart

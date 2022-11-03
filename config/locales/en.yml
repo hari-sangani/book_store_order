@@ -1,0 +1,46 @@
+en:
+  books:
+    show:
+      view: "View Deatils"
+      cart: "Add To Cart"
+      wishlist: "Add To Wishlist"
+      by: "by"
+      about_author: "About the Author"
+      product_details: "Product Details"
+      product_review: "Product Review"
+      publisher: "Publisher"
+      published_date: "Published Date"
+      language: "Language"
+      paperback: "Paperback"
+    index:
+      view: "View Deatils"
+      cart: "Add To Cart"
+      wishlist: "Add To Wishlist"
+      by: "by"
+  layouts:
+    show_book:
+      view: "View Deatils"
+      by: "by"
+    panel:
+      genre: "Genre"
+      author: "Author"
+      publisher: "Publisher"
+      language: "Language"
+      price: "Price"
+    header:
+      search: "Search"
+      home: "Home"
+      books: "Books"
+      about: "About"
+      welcome: "Welcome,"
+      logout: "Logout"
+      sign_up: "Sign Up"
+      login: "Login"
+      contact: "Contact"
+      account: "Account"
+      offer: "Offer of the Day"
+      offer_msg: "Get flat 30% off"
+  pages:
+    home:
+      view: "View Deatils"
+      cart: "Add To Cart"

@@ -1,0 +1,38 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      .row
+        = render "layouts/user_section"
+        #wishlist.col-lg-9
+          .row.products
+            - if !@user_wishlist.empty?
+              - @user_wishlist.each do | list |
+                .col-lg-4.col-md-6
+                  .product
+                    .card
+                      = link_to image_tag(list.book.image, class: "card-img-top"), book_path(list.book.id) if list.book.image.attached?
+                      .card-body
+                        %h5.card-title= list.book.title
+                        %p.card-text.author-name
+                          by
+                          - list.book.authors.each do | author |
+                            = author.name
+                        %p.card-text.price
+                          ₹#{list.book.price}
+                        .pb-2
+                          = link_to "View Details", book_path(list.book.id), class: "btn btn1"
+                        .pb-2
+                          = link_to carts_path(cart: {user_id: current_user.id, book_id: list.book.id}), |
+                            method: :post,                                                               |
+                            class: "btn btn-primary navbar-btn" do                                       |
+                            %i.fa.fa-shopping-cart
+                            Add to Cart
+                        %div
+                          = link_to "Remove", wishlist_path(list.id), method: :delete, class: "btn del-btn"
+            - else
+              %div
+                %h4 No Books found in your wishlist!!
+    / *** id="content" end ***

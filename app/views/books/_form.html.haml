@@ -1,0 +1,47 @@
+= form_with(model: book) do |form|
+  - if book.errors.any?
+    %div{:style => "color: red"}
+      %h2
+        = pluralize(book.errors.count, "error")
+        prohibited this book from being saved:
+      %ul
+        - book.errors.each do |error|
+          %li= error.full_message
+  %div
+    = form.label :publisher_id, style: "display: block"
+    = form.text_field :publisher_id
+  %div
+    = form.label :title, style: "display: block"
+    = form.text_field :title
+  %div
+    = form.label :image, style: "display: block"
+    = form.file_field :image
+  %div
+    = form.label :isbndb, style: "display: block"
+    = form.number_field :isbndb
+  %div
+    = form.label :publish_date, style: "display: block"
+    = form.date_field :publish_date
+  %div
+    = form.label :language, style: "display: block"
+    = form.text_field :language
+  %div
+    = form.label :mrp, style: "display: block"
+    = form.number_field :mrp
+  %div
+    = form.label :discount, style: "display: block"
+    = form.number_field :discount
+  %div
+    = form.label :price, style: "display: block"
+    = form.number_field :price
+  %div
+    = form.label :paperback, style: "display: block"
+    = form.number_field :paperback
+  %div
+    = form.label :quantity, style: "display: block"
+    = form.number_field :quantity
+  %div
+    = form.label :active, style: "display: block"
+    = form.check_box :active
+  %div
+    = form.submit

@@ -1,0 +1,79 @@
+/
+  *** FOOTER ***
+  _________________________________________________________
+#footer
+  .container
+    .row
+      .col-lg-4.col-md-6
+        %h4.mb-3 Pages
+        %ul.list-unstyled
+          %li= link_to "About us", pages_about_path
+          %li
+            %a{:href => "#"} Terms and conditions
+          %li
+            %a{:href => "#"} FAQ
+          %li= link_to "Contact", pages_contact_path
+        %hr.w-50/
+        %h4.mb-3 User section
+        %ul
+          %li
+            = link_to "Login", new_user_session_path
+      / /.col-lg-3
+      .col-lg-4.col-md-6
+        %h4.mb-3 Where to find us
+        %p
+          %strong Obaju Ltd.
+          = succeed "13/25" do
+            %br/
+          = succeed "New" do
+            %br/
+          = succeed "45Y" do
+            %br/
+          = succeed "England" do
+            %br/
+          %br/
+          %strong Great Britain
+        %ul
+          %li= link_to "Contact", pages_contact_path
+        %hr.d-block.d-md-none/
+      / /.col-lg-3
+      .col-lg-4.col-md-6
+        %h4.mb-3 Get the news
+        %p.text-muted
+          Pellentesque habitant morbi tristique senectus et netus et
+          malesuada fames ac turpis egestas.
+        %form
+          .input-group
+            %input.form-control{:placeholder => "E-mail", :type => "text"}/
+            %button.btn.btn-outline-secondary{:type => "button"}
+              Subscribe!
+          / /input-group
+        %hr/
+        %h4.mb-3 Stay in touch
+        %p.social
+          %a.facebook.external{:href => "#"}
+            %i.fa.fa-facebook
+          %a.twitter.external{:href => "#"}
+            %i.fa.fa-twitter
+          %a.instagram.external{:href => "#"}
+            %i.fa.fa-instagram
+          %a.gplus.external{:href => "#"}
+            %i.fa.fa-google-plus
+          %a.email.external{:href => "#"}
+            %i.fa.fa-envelope
+      / /.col-lg-3
+    / /.row
+  / /.container
+/ /#footer
+/ *** FOOTER END ***
+/
+  *** COPYRIGHT ***
+  _________________________________________________________
+#copyright
+  .container
+    .row
+      .col-lg-6.mb-2.mb-lg-0
+        %p.text-lg-left ©2022 Harikrushna Sangani - BoOkStoRE
+      .col-lg-6
+        %p.text-end.text-lg-right Design by HK
+/ *** COPYRIGHT END ***

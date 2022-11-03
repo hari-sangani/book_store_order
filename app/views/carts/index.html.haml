@@ -1,0 +1,89 @@
+.all
+  #content
+    .container
+      .row
+        #basket.col-lg-9
+          .box
+            = form_with(model: @carts) do | form |
+              %h1 Shopping cart
+              - if !@user_cart.empty?
+                %p.text-muted
+                  You currently have #{pluralize @user_cart.count, 'item'} in your cart.
+                .table-responsive
+                  %table.table
+                    %thead
+                      %tr
+                        %hr.mb-0/
+                        %th{:colspan => "2"} Product
+                        %th Quantity
+                        %th Unit price
+                        %th{:colspan => "2"} Total
+                    %tbody
+                      - @user_cart.each do | item |
+                        %tr
+                          = form.hidden_field :user_id, value: current_user.id
+                          %td
+                            = link_to image_tag(item.book.image), book_path(item.book.id) if item.book.image.attached?
+                          %td
+                            = link_to item.book.title, book_path(item.book.id)
+                          %td
+                            %input{:name => "quantity", :type => "number", :value => item.quantity, :min => "1", :class =>"form-control quantity", :id => "#{item.id}" }
+                          %td
+                            ₹
+                            %span.price{:id => "#{item.id}"}= item.book.price
+                          %td
+                            ₹
+                            %span.total{:id => "#{item.id}"}= item.book.price * item.quantity
+                          %td
+                            = link_to cart_path(item.id), method: :delete do
+                              %i.fa.fa-trash-o.ps-4
+                    %tfoot
+                      %tr
+                        %th{:colspan => "4"} Sub-Total
+                        %th{:colspan => "2"}
+                          ₹#{@user_cart.map(&:total_price).sum}
+                / /.table-responsive
+                .box-footer.d-flex.justify-content-between.flex-column.flex-lg-row
+                  .left
+                    = link_to books_path, class: "btn btn-outline-secondary" do
+                      %i.fa.fa-chevron-left
+                      Continue shopping
+                  .right
+                    %button.btn.btn-primary{:type => "submit"}
+                      Place Order
+              - else
+                %hr/
+                %h3.mt-5 Cart is empty!
+        .col-lg-3
+          #order-summary.box
+            .box-header
+              %h3.mb-0 Order Summary
+              %hr/
+            %p.text-muted
+              Shipping and additional costs are calculated based on the
+              values you have entered.
+            .table-responsive
+              %table.table
+                %tbody
+                  %tr
+                    %td Order subtotal
+                    %th.text-end
+                      ₹#{@user_cart.map(&:total_price).sum}
+                  %tr
+                    %td Shipping and handling
+                    %th.text-end
+                      ₹#{@shipping_cost}
+                  %tr
+                    %td Total
+                    %th.text-end
+                      ₹#{@user_cart.map(&:total_price).sum + @shipping_cost}
+          .box
+            .box-header
+              %h4.mb-0 Coupon code
+            %p.text-muted
+              If you have a coupon code, please enter it in the box below.
+            %form
+              .input-group
+                %input.form-control{:type => "text"}/
+                %button.btn.btn-primary{:type => "button"}
+                  %i.fa.fa-gift

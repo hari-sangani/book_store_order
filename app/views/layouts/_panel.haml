@@ -1,0 +1,43 @@
+.col-lg-3
+  .card.sidebar-menu.mb-4
+    .card-header
+      %h3.h4.card-title.text-center Categories
+    .card-body
+      %ul.nav.nav-pills.flex-column.category-menu
+        %li
+          %h3= t '.genre'
+          %ul.list-unstyled
+            - Category.all.each do | category |
+              %li= link_to category.name, books_path(category: category.name), class: "nav-link"
+        %li
+          %h3= t '.author'
+          %ul.list-unstyled
+            - Author.all.each do | author |
+              %li= link_to author.name, books_path(author: author.name), class: "nav-link"
+        %li
+          %h3= t '.publisher'
+          %ul.list-unstyled
+            - Publisher.all.each do | publisher |
+              %li= link_to publisher.name, books_path(publisher: publisher.name), class: "nav-link"
+        %li
+          %h3= t '.price'
+          %ul.list-unstyled
+            %li
+              = link_to "Under ₹100", books_path(min: 0, max: 100), class: "nav-link"
+            %li
+              = link_to "₹100 - ₹300", books_path(min: 100, max: 300), class: "nav-link"
+            %li
+              = link_to "₹300 - ₹500", books_path(min: 300, max: 500), class: "nav-link"
+            %li
+              = link_to "₹500 - ₹1000", books_path(min: 500, max: 1000), class: "nav-link"
+            %li
+              = link_to "Over ₹1000", books_path(min: 1000, max: 10000), class: "nav-link"
+        %li
+          %h3= t '.language'
+          %ul.list-unstyled
+            %li
+              = link_to "English", books_path(language: "English"), class: "nav-link"
+            %li
+              = link_to "Hindi", books_path(language: "Hindi"), class: "nav-link"
+            %li
+              = link_to "Gujarati", books_path(language: "Gujarati"), class: "nav-link"

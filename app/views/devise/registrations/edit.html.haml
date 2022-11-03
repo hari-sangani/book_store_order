@@ -1,0 +1,61 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      .row
+        = render "layouts/user_section"
+        .col-lg-9
+          #account.box
+            %h1 My account
+            %p.lead
+              Change your personal details or your password here.
+            %p.text-muted
+              Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas.
+            %h3.mt-3 Personal details
+            %ul.list-group.list-group-flush
+              %li.list-group-item
+                %strong Name :
+                = @user.name
+              %li.list-group-item
+                %strong Email :
+                = @user.email
+              %li.list-group-item
+                %strong Contact No. :
+                = @user.contact_no
+              %li.list-group-item
+                %strong Address :
+                = @user.address
+            %h3.mt-5 Change password
+            = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "edit-form") do |f|
+              = render "devise/shared/error_messages", resource: resource
+              .field.form-group
+                = f.label :email
+                %br/
+                = f.email_field :email, autocomplete: "email", class: "form-control"
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                %div
+                  Currently waiting confirmation for: #{resource.unconfirmed_email}
+              .field.form-group
+                = f.label :password
+                %i (leave blank if you don't want to change it)
+                %br/
+                = f.password_field :password, autocomplete: "new-password", class: "form-control"
+              .field.form-group
+                = f.label :password_confirmation
+                %br/
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+              .field.form-group
+                = f.label :current_password
+                %i (we need your current password to confirm your changes)
+                %br/
+                = f.password_field :current_password, autocomplete: "current-password", class: "form-control"
+              .actions.text-center.my-3
+                = f.submit "Update", class: "btn btn-success"
+            %hr.mt-5/
+            %h3 Cancel my account
+            %p
+              Unhappy? #{button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn del-btn"}
+    / *** id="content" end ***

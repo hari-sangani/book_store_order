@@ -1,0 +1,57 @@
+/
+  *** MAIN ***
+  _________________________________________________________
+.all
+  #content
+    .container
+      .row
+        = render "layouts/user_section"
+        .col-lg-9
+          #customer_orders.box
+            %h1 My orders
+            %p.lead Your orders on one place.
+            %p.text-muted
+              If you have any questions, please feel free to
+              = succeed "," do
+                %a{:href => "contact.html"} contact us
+            %hr/
+            .table-responsive
+              %table.table.table-hover
+                %thead
+                  %tr
+                    %th Order
+                    %th Date
+                    %th Total
+                    %th Status
+                %tbody
+                  %tr
+                    %th # 1735
+                    %td 22/06/2022
+                    %td $ 18.00
+                    %td
+                      %span.badge.text-bg-info Being prepared
+                  %tr
+                    %th # 1735
+                    %td 22/06/2022
+                    %td $ 18.00
+                    %td
+                      %span.badge.text-bg-info Being prepared
+                  %tr
+                    %th # 1735
+                    %td 22/06/2022
+                    %td $ 18.00
+                    %td
+                      %span.badge.text-bg-success Received
+                  %tr
+                    %th # 1735
+                    %td 22/06/2022
+                    %td $ 18.00
+                    %td
+                      %span.badge.text-bg-danger Cancelled
+                  %tr
+                    %th # 1735
+                    %td 22/06/2022
+                    %td $ 18.00
+                    %td
+                      %span.badge.text-bg-warning On hold
+    / *** id="content" end ***
